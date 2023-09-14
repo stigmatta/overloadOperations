@@ -58,7 +58,7 @@ DynamicArray DynamicArray:: operator+(int b)
     DynamicArray rez;
     rez.size = this->size + b;
     rez.ptr = new int[rez.size];
-    for (int i = 0; i < rez; size; i++)
+    for (int i = 0; i < rez.size; i++)
     {
         if (i < this->size)
             rez.ptr[i] = this->ptr[i];
@@ -84,6 +84,7 @@ DynamicArray DynamicArray:: operator-(int b)
         cout << "Error. Your array containts 2 or less elements" << endl;
         return *this;
     }
+    return rez;
 }
 DynamicArray DynamicArray:: operator *(int b)
 {
@@ -101,9 +102,9 @@ DynamicArray DynamicArray:: operator - (DynamicArray b)
     {
         rez.size = this->size - b.size;
         rez.ptr = new int[rez.size];
-        for (int i = 0, j = 0; i < rez.size; i++)
+        for (int i = 0, j = 0; i < this->size; i++)
         {
-            if (i > b.size)
+            if (i > b.size-1)
             {
                 rez.ptr[j] = this->ptr[i];
                 j++;
@@ -114,9 +115,9 @@ DynamicArray DynamicArray:: operator - (DynamicArray b)
     {
         rez.size = b.size - this->size;
         rez.ptr = new int[rez.size];
-        for (int i = 0, j = 0; i < rez.size; i++)
+        for (int i = 0, j = 0; i < b.size; i++)
         {
-            if (i > this->size)
+            if (i > this->size-1)
             {
                 rez.ptr[j] = b.ptr[i];
                 j++;

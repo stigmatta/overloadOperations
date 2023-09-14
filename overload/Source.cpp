@@ -8,7 +8,7 @@ int main()
 	a.Output();
 	DynamicArray test1 = a + 2;
 	test1.Output();
-	DynamicArray test2 = a - 2;
+	DynamicArray test2 = a - 3;
 	test2.Output();
 	DynamicArray test3 = a * 2;
 	test3.Output();
